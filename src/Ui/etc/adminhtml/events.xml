@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!-- Event definition for successful backend user login -->
+    <event name="backend_auth_user_login_success">
+        <!-- Observer for the backend_auth_user_login_success event -->
+        <observer instance="Maginium\AdminUi\Observers\SetHideSurveyQuestionObserver" name="Maginium_AdminUi" />
+    </event>
+</config>

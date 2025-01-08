@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<page
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+    layout="admin-login"
+>
+    <!-- Start of the body section -->
+    <body>
+        <!-- Reference the block with the name "logo" -->
+        <referenceBlock name="logo">
+            <!-- Start of arguments for the referenced block -->
+            <arguments>
+                <!-- Specify the path to the logo image -->
+                <argument xsi:type="string" name="logo_image_src">Maginium_AdminUi::images/login-logo.svg</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

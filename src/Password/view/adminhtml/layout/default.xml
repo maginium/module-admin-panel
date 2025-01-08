@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<page
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
+    <body>
+        <!-- Add a block named 'admin_chosen' with the template 'chosen.phtml' to the 'before.body.end' container -->
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Framework\View\Element\Template" name="admin_password_toggle" template="Maginium_AdminPassword::js.phtml" />
+        </referenceContainer>
+    </body>
+</page>

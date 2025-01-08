@@ -1,0 +1,74 @@
+<?php
+
+use Maginium\Framework\Support\Facades\Config;
+// Get the model name from the block
+$modelName = $block->getEntityName();
+
+// Get the support email from the block or define it statically
+$supportEmail = Config::getString("trans_email/ident_support/email");
+
+// Check if modelName is null or empty
+if (!$modelName) {
+    $message = __("Any questions please feel free to tell us.");
+} else {
+    $message = __("Any questions about <strong>\"%1\"</strong> please feel free to tell us.", $modelName);
+}
+?>
+
+<!-- Start of alert message -->
+<em class="icon ni ni-alert-circle"></em>
+
+<!-- Display the prepared message with a link to chat -->
+<?= $message ?>
+<a id="more-info-link" class="more-info-link" href="javascript:void(0);" onclick="handle();">
+    <span id="action-text"><?= __("Chat Now!") ?></span>
+    <!-- Display an external link icon -->
+    <em class="icon ni ni-external"></em>
+</a>
+
+<!-- JavaScript function to show the Intercom chat -->
+<script>
+    /**
+     * Function to toggle the action text based on whether Intercom is available or not.
+     */
+    document.addEventListener('DOMContentLoaded', function () {
+        var actionText = document.getElementById('action-text');
+        var modelName = <?= json_encode($modelName ?: null) ?>;
+        var supportEmail = <?= json_encode($supportEmail ?: 'support@example.com') ?>; // Get support email from PHP
+
+        if (window.Intercom) {
+            // If Intercom is available, set the text to "Chat Now!"
+            actionText.innerHTML = "<?= __("Chat Now!") ?>";
+        } else {
+            // If Intercom is not available, set the text to "Contact Now!"
+            actionText.innerHTML = "<?= __("Contact Now!") ?>";
+        }
+    });
+
+    /**
+     * Function to handle the click event and show either Intercom or fallback to email.
+     */
+    function handle() {
+        var modelName = <?= json_encode($modelName ?: null) ?>;
+        var supportEmail = <?= json_encode($supportEmail ?: 'support@example.com') ?>; // Get support email from PHP
+
+        if (window.Intercom) {
+            // If Intercom is available, use it to show a new message
+            if (modelName) {
+                Intercom('showNewMessage', "I'm querying about \"" + modelName + "\"");
+            } else {
+                // If no modelName, just open the chat
+                Intercom('show');
+            }
+        } else {
+            // If Intercom is not available, use email fallback
+            var emailSubject = modelName ? "Query about: " + modelName : "General Inquiry";
+            var emailBody = modelName ? "I'm querying about \"" + modelName + "\"." : "Hello, I have an inquiry.";
+            var emailLink = "mailto:" + supportEmail + "?subject=" + encodeURIComponent(emailSubject) + "&body=" + encodeURIComponent(emailBody);
+
+            // Open the email link in a new tab
+            window.open(emailLink, '_blank');
+        }
+    }
+</script>
+<!-- End of script -->

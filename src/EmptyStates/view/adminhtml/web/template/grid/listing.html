@@ -1,0 +1,42 @@
+<div class="admin__data-grid-wrap" data-role="grid-wrapper">
+  <!-- Data Grid Wrapper -->
+  <table class="data-grid" data-role="grid">
+    <!-- Table Header -->
+    <thead>
+      <!-- Render Table Header -->
+      <tr each="data: getVisible(), as: '$col'" render="getHeader()" />
+    </thead>
+
+    <!-- Table Body -->
+    <tbody>
+      <!-- Data Rows -->
+      <tr class="data-row" repeat="foreach: rows, item: '$row'" css="'_odd-row': $index % 2">
+        <!-- Data Cells -->
+        <td outerfasteach="data: getVisible(), as: '$col'" css="getFieldClass($row())" click="getFieldHandler($row())" template="getBody()" />
+      </tr>
+      <!-- No Data Placeholder -->
+      <tr ifnot="hasData()" class="data-grid-tr-no-data">
+        <td attr="colspan: countVisible()">
+          <div class="empty-state">
+            <!-- Conditional Rendering of Images -->
+            <!-- Check if columnsProvider length is greater than 0 -->
+            <!-- Display appropriate SVG based on data availability -->
+            <img
+              if="initDnd().dndConfig.columnsProvider.length > 0"
+              alt="We couldn't find any records."
+              data-bind="attr: { src: require.toUrl( 'Maginium_AdminEmptyStates/image/' + getEntityName(initDnd().dndConfig.columnsProvider) + '.svg' ) }"
+            />
+            <!-- Display default record.svg if no data is available -->
+            <img
+              ifnot="initDnd().dndConfig.columnsProvider.length > 0"
+              alt="We couldn't find any records."
+              data-bind="attr: { src: require.toUrl('Maginium_AdminEmptyStates/image/record.svg') }"
+            />
+            <!-- Display No Data Label -->
+            <span class="label"><!-- ko i18n:' We couldn\'t find any records.' --><!-- /ko --></span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

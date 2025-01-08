@@ -1,0 +1,641 @@
+@font-weight-lighter: 100;
+@font-weight-light: 200;
+@font-weight-regular: 400;
+@font-weight-semi-bold: 500;
+@font-weight-bold: 700;
+@font-weight-bolder: 800;
+@font-weight-extra-bolder: 800;
+
+/* Icons Sizes */
+@icon-font-size-xlarge: 18px;
+@icon-font-size-large: 16px;
+@icon-font-size-medium: 14px;
+@icon-font-size-small: 12px;
+@icon-font-size-mini: 10px;
+
+@admin-icon-padding: 1rem;
+@admin-icon-font-size: 22px;
+@admin-icon-font-weight: 500;
+@admin-icon-font-family: @icons__font-name;
+
+.react-panel {
+  .jstree-checkbox {
+    width: 2.4rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+
+    // background-image: none;
+    &:before {
+      content: ".";
+      font-size: 1rem;
+      text-align: center;
+      color: transparent;
+      display: inline-block;
+      background-color: #f6f8fa;
+      border-color: #f6f8fa !important;
+      transform: translate(2px, -1px);
+    }
+  }
+
+  /* Multiselect Tree */
+  .admin__action-multiselect-tree {
+    ul.admin__action-multiselect-menu-inner {
+      margin: 0;
+      padding: 0;
+      display: block;
+      list-style-type: none;
+      list-style-image: none;
+
+      li.admin__action-multiselect-menu-inner-item {
+        display: block;
+        min-width: 18px;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        min-height: 18px;
+        margin-left: 18px;
+        line-height: 18px;
+        white-space: nowrap;
+        list-style-type: none;
+        background: transparent;
+
+        &._root {
+          margin-left: 0;
+        }
+
+        &:before,
+        &:after {
+          display: none;
+        }
+
+        .action-menu-item {
+          margin: 0;
+          padding: 0;
+          background-color: unset;
+
+          &:before {
+            display: none;
+          }
+
+          &._hover {
+            background-color: unset !important;
+          }
+
+          &._last {
+            &:before {
+              content: "";
+              width: 24px;
+              height: 24px;
+              position: static;
+              line-height: 24px;
+              display: inline-block;
+              background-position: -36px -4px;
+            }
+          }
+
+          &._expended {
+            .admin__action-multiselect-dropdown {
+              background-position: -36px -4px;
+            }
+          }
+
+          .admin__action-multiselect-dropdown {
+            width: 24px;
+            height: 24px;
+            position: static;
+            line-height: 24px;
+            display: inline-block;
+            background-position: -4px -4px;
+
+            &:before {
+              display: none;
+            }
+          }
+
+          .admin__control-checkbox {
+            position: static;
+            display: none;
+          }
+
+          &._with-checkbox .admin__action-multiselect-label {
+            padding-left: 48px;
+
+            &:after {
+              left: 2rem;
+            }
+          }
+
+          .admin__action-multiselect-label {
+            margin: 0;
+            height: 24px;
+            font-size: 14px;
+            line-height: 24px;
+            line-height: 24px;
+            vertical-align: top;
+            white-space: nowrap;
+            text-transform: none;
+            display: inline-block;
+            padding: 0 4px 0 26px;
+            letter-spacing: initial;
+            font-weight: @font-weight-regular;
+            transition:
+              background-color 0.15s,
+              box-shadow 0.15s;
+
+            &:after {
+              left: 0;
+              content: "";
+              width: 2.4rem;
+              height: 2.4rem;
+              position: absolute;
+              background-position: -260px -4px;
+            }
+
+            &:hover {
+              border-radius: 2px;
+            }
+
+            span {
+              font-size: 14px;
+              line-height: 24px;
+              text-transform: none;
+              letter-spacing: initial;
+              font-weight: @font-weight-regular;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Ext Tree Checkboxes */
+  div.x-tree.tree-wrapper {
+    margin-top: 14px;
+
+    & > ul.x-tree-root-ct > li.x-tree-node > ul.x-tree-node-ct {
+      background-image: unset;
+
+      & > li.x-tree-node {
+        margin-left: 0;
+      }
+    }
+
+    ul.x-tree-node-ct {
+      margin: 0;
+      padding: 0;
+      display: block;
+      list-style-type: none;
+      list-style-image: none;
+      background-repeat: repeat-y;
+      background-position: -292px -4px;
+
+      li.x-tree-node {
+        display: block;
+        min-width: 18px;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        min-height: 18px;
+        margin-left: 24px;
+        line-height: 18px;
+        white-space: nowrap;
+        list-style-type: none;
+
+        &:last-child {
+          & > div.x-tree-node-el {
+            background-image: unset;
+
+            &:after {
+              background-position: -68px -4px;
+            }
+          }
+
+          & > ul.x-tree-node-ct {
+            background-image: unset;
+          }
+        }
+
+        div.x-tree-node-el {
+          position: relative;
+          background-repeat: repeat-y;
+          background-position: -292px -4px;
+
+          &:before {
+            z-index: 1;
+            content: "";
+            width: 24px;
+            height: 24px;
+            display: block;
+            line-height: 24px;
+            position: absolute;
+            pointer-events: none;
+            background-position: -4px -4px;
+          }
+
+          &.x-tree-node-expanded:before {
+            background-position: -36px -4px;
+          }
+
+          &.x-tree-node-leaf:before {
+            display: none;
+          }
+
+          &:after {
+            top: 0;
+            content: "";
+            width: 24px;
+            height: 24px;
+            display: block;
+            line-height: 24px;
+            position: absolute;
+            pointer-events: none;
+            background-repeat: repeat-y;
+            background-position: -68px -4px;
+          }
+
+          img.x-tree-ec-icon {
+            opacity: 0;
+            width: 24px;
+            height: 24px;
+          }
+
+          span.x-tree-node-indent,
+          img.x-tree-node-icon {
+            display: none;
+          }
+
+          &.x-tree-selected a {
+            border-radius: 2px;
+          }
+
+          a {
+            margin: 0;
+            height: 24px;
+            font-size: 14px;
+            line-height: 24px;
+            line-height: 24px;
+            position: relative;
+            vertical-align: top;
+            white-space: nowrap;
+            text-transform: none;
+            display: inline-block;
+            padding: 0 4px 0 26px;
+            letter-spacing: initial;
+            font-weight: @font-weight-regular;
+            transition:
+              background-color 0.15s,
+              box-shadow 0.15s;
+
+            &:before {
+              left: 0;
+              content: "";
+              width: 2.4rem;
+              height: 2.4rem;
+              position: absolute;
+              background-position: -260px -4px;
+            }
+
+            &:hover {
+              border-radius: 2px;
+            }
+
+            span {
+              font-size: 14px;
+              line-height: 24px;
+              text-transform: none;
+              letter-spacing: initial;
+              background-color: unset;
+              font-weight: @font-weight-regular;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Ext Tree Lines - No Lines */
+  div.x-tree > ul.x-tree-root-ct.x-tree-no-lines > div.x-tree-root-node {
+    & > li.x-tree-node {
+      background-image: unset;
+    }
+
+    li.x-tree-node {
+      div.x-tree-node-el {
+        background-image: unset;
+
+        &:after {
+          background-image: unset;
+        }
+
+        .x-tree-ec-icon {
+          display: none;
+        }
+      }
+
+      ul.x-tree-node-ct {
+        background-image: unset;
+      }
+    }
+  }
+
+  div.x-tree > ul.x-tree-root-ct > div.x-tree-root-node {
+    & > li.x-tree-node {
+      background-repeat: repeat-y;
+      background-position: -292px -4px;
+
+      &:last-child {
+        background-image: unset;
+      }
+    }
+
+    li.x-tree-node {
+      display: block;
+      min-width: 18px;
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+      min-height: 18px;
+      margin-left: 24px;
+      line-height: 18px;
+      white-space: nowrap;
+      list-style-type: none;
+
+      &:last-child {
+        & > div.x-tree-node-el {
+          background-image: unset;
+
+          &:after {
+            background-position: -68px -4px;
+          }
+        }
+
+        & > ul.x-tree-node-ct {
+          background-image: unset;
+        }
+      }
+
+      div.x-tree-node-el {
+        position: relative;
+        background-repeat: repeat-y;
+        background-position: -292px -4px;
+
+        &:before {
+          z-index: 1;
+          content: "";
+          width: 24px;
+          height: 24px;
+          display: block;
+          line-height: 24px;
+          position: absolute;
+          pointer-events: none;
+          background-position: -4px -4px;
+        }
+
+        &.x-tree-node-expanded:before {
+          background-position: -36px -4px;
+        }
+
+        &.x-tree-node-leaf:before {
+          display: none;
+        }
+
+        &:after {
+          top: 0;
+          content: "";
+          width: 24px;
+          height: 24px;
+          display: block;
+          line-height: 24px;
+          position: absolute;
+          pointer-events: none;
+          background-repeat: repeat-y;
+          background-position: -68px -4px;
+        }
+
+        img.x-tree-ec-icon {
+          opacity: 0;
+          width: 24px;
+          height: 24px;
+        }
+
+        span.x-tree-node-indent,
+        img.x-tree-node-icon {
+          display: none;
+        }
+
+        &.x-tree-selected a {
+          border-radius: 2px;
+        }
+
+        a {
+          margin: 0;
+          height: 24px;
+          font-size: 14px;
+          line-height: 24px;
+          line-height: 24px;
+          position: relative;
+          white-space: nowrap;
+          vertical-align: top;
+          text-transform: none;
+          display: inline-block;
+          padding: 0 4px 0 26px;
+          letter-spacing: initial;
+          font-weight: @font-weight-regular;
+          transition:
+            background-color 0.15s,
+            box-shadow 0.15s;
+
+          &:before {
+            left: 0;
+            content: "";
+            width: 2.4rem;
+            height: 2.4rem;
+            position: absolute;
+            background-position: -260px -4px;
+          }
+
+          &:hover {
+            border-radius: 2px;
+          }
+
+          span {
+            font-size: 14px;
+            line-height: 24px;
+            text-transform: none;
+            letter-spacing: initial;
+            background-color: unset;
+            font-weight: @font-weight-regular;
+          }
+        }
+      }
+
+      ul.x-tree-node-ct {
+        margin: 0;
+        padding: 0;
+        display: block;
+        list-style-type: none;
+        list-style-image: none;
+        background-repeat: repeat-y;
+        background-position: -292px -4px;
+      }
+    }
+  }
+
+  /* Ext Tree Custom Icons */
+  .attribute-set-col div.x-tree > ul.x-tree-root-ct > div.x-tree-root-node li.x-tree-node ul.x-tree-node-ct li.x-tree-node div.x-tree-node-el,
+  .attribute-set-col div.x-tree#tree-div2 > ul.x-tree-root-ct > div.x-tree-root-node li.x-tree-node div.x-tree-node-el,
+  .x-dd-drag-proxy .x-tree-node-el {
+    a:before {
+      text-align: center;
+      background-image: unset;
+      font-weight: @admin-icon-font-weight;
+      font-size: @icon-font-size-xlarge + 2;
+    }
+
+    &.system-leaf a:after {
+      left: 12px;
+      bottom: -6px;
+      position: absolute;
+      font-weight: @admin-icon-font-weight;
+      font-size: @icon-font-size-medium - 2;
+    }
+  }
+
+  .x-dd-drag-proxy .x-tree-node-el {
+    .x-tree-node-icon {
+      display: none !important;
+    }
+
+    a {
+      position: relative;
+
+      &:before {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .jstree-checkbox {
+    &:before {
+      border-radius: 4px;
+      border: 2px solid;
+      width: 1.8rem;
+      height: 1.8rem;
+      transition:
+        background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+      line-height: 1.4rem;
+    }
+  }
+
+  .jstree-checked {
+    > a {
+      > .jstree-checkbox {
+        &:before {
+          background-color: @primary__color;
+          border-color: @primary__color;
+          color: @color-white;
+        }
+      }
+    }
+  }
+
+  div.jstree {
+    ul {
+      .disabled {
+        > a {
+          color: @color-gray-light2;
+        }
+      }
+
+      a {
+        // color: @color-gray-light2;
+      }
+    }
+  }
+
+  .jstree-checkbox {
+    &:before {
+      border-color: @color-gray-light1;
+    }
+  }
+
+  .jstree-default {
+    > .jstree-no-dots {
+      .jstree-open {
+        > .jstree-ocl {
+          background-position: -36px -4px;
+        }
+      }
+
+      .jstree-closed {
+        > .jstree-ocl {
+          background-position: -4px -4px;
+        }
+      }
+
+      .jstree-leaf > .jstree-ocl {
+        background-position: -68px -4px;
+      }
+
+      .jstree-anchor > .jstree-undetermined {
+        background-position: -196px -4px;
+      }
+
+      .jstree-anchor > .jstree-undetermined:hover {
+        background-position: -196px -36px;
+      }
+
+      .jstree-node,
+      .jstree-leaf > .jstree-ocl {
+        background: transparent;
+      }
+    }
+
+    .jstree-open {
+      > .jstree-ocl {
+        background-position: -132px -4px;
+      }
+    }
+
+    .jstree-closed {
+      > .jstree-ocl {
+        background-position: -100px -4px;
+      }
+    }
+
+    .jstree-checkbox {
+      background-position: -164px -4px;
+
+      &::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border: 0;
+      }
+    }
+  }
+
+  .jstree-default.jstree-checkbox-selection .jstree-clicked,
+  .jstree-default .jstree-checked {
+    > .jstree-checkbox {
+      background-position: -228px -4px;
+    }
+  }
+
+  .jstree-container-ul {
+    .jstree-node {
+      .jstree-icon.jstree-themeicon {
+        background-position: -260px -4px;
+      }
+    }
+  }
+
+  .jstree-default > .jstree-no-dots {
+    .jstree-open > .jstree-ocl {
+      background-position: -36px -4px;
+    }
+
+    .jstree-closed > .jstree-ocl {
+      background-position: -4px -4px;
+    }
+  }
+}

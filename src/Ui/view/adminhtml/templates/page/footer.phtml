@@ -1,0 +1,7 @@
+<p class="magento-version">
+    <!-- Display the "Adobe Commerce" label, escaping HTML to prevent XSS vulnerabilities -->
+    <strong><?= $block->escapeHtml(__('Adobe Commerce')) ?></strong>
+
+    <!-- Display the version number dynamically, escaping HTML and passing the version via getMagentoVersion() method -->
+    <?= $block->escapeHtml(__('ver. %1', $block->getMagentoVersion())) ?>
+</p>

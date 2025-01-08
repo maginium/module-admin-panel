@@ -1,0 +1,82 @@
+<!-- Optionally, link the custom JS file (only if needed for specific use cases) -->
+<script type="text/javascript" src="<?php echo $block->getViewFileUrl('Maginium_AdminPace::js/pace.min.js'); ?>"></script>
+
+<script>
+    /**
+     * Configuration options for the Pace progress bar.
+     *
+     * These settings control how the progress bar behaves during page loads and AJAX requests.
+     */
+    const paceOptions = {
+        /**
+         * Automatically start the progress bar on page load.
+         *
+         * Set `true` to display the progress bar automatically when the page starts loading.
+         * Set `false` for manual control.
+         */
+        autoStart: true,
+
+        /**
+         * Minimum delay before showing the progress bar, in milliseconds.
+         *
+         * Prevents the progress bar from appearing briefly on very fast page loads.
+         */
+        minTime: 300,
+
+        /**
+         * Restart the progress bar only for specific requests.
+         *
+         * If `true`, the progress bar shows for regular and AJAX navigations, but not for background requests.
+         */
+        restartOnRequestAfter: true,
+
+        /**
+         * Enable or disable tracking of AJAX requests.
+         *
+         * If `true`, Pace shows the progress bar during AJAX requests. Set to `false` to disable this.
+         */
+        ajax: true,
+
+        /**
+         * Enable or disable tracking of document loading events.
+         *
+         * If `true`, Pace shows the progress bar during initial page load. Set to `false` to disable this.
+         */
+        document: true,
+
+        /**
+         * Enable or disable tracking of event lag.
+         *
+         * If `true`, the progress bar appears based on delays caused by heavy event processing.
+         */
+        eventLag: false,
+
+        /**
+         * Restart the progress bar on `pushState` events.
+         *
+         * If `true`, Pace restarts when the browser's history changes via `pushState`.
+         */
+        restartOnPushState: false,
+    };
+
+    // Attach configuration to the global `paceOptions` object
+    window.paceOptions = paceOptions;
+
+    /**
+     * Utility to initialize the Pace progress bar with additional logging for debugging.
+     *
+     * @param {Object} options - The configuration options for Pace.
+     */
+    const initializePace = (options) => {
+        if (!window.Pace) {
+            console.warn("Pace library is not loaded. Please include the Pace library in your project.");
+            return;
+        }
+
+        window.Pace.options = options;
+        window.Pace.start();
+    };
+
+    // Initialize Pace with the configured options
+    initializePace(paceOptions);
+</script>

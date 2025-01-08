@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<page
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+    layout="admin-1column"
+>
+    <body>
+        <!-- Reference the page wrapper container for the layout -->
+        <referenceContainer name="page.wrapper">
+            <!-- Define a new container after the page content, with specific HTML classes and IDs -->
+            <container
+                after="page.content"
+                as="more-info"
+                htmlClass="form-more-info"
+                htmlId="form-more-info"
+                htmlTag="div"
+                name="more.info.container"
+            >
+                <!-- Add a block for rendering information, specifying the class, name, and template -->
+                <block class="Maginium\AdminInfoBox\Blocks\Title" name="more.info.block" template="Maginium_AdminInfoBox::more-info.phtml">
+                    <arguments>
+                        <!-- Define an argument for the block, setting the 'model_name' to 'default' -->
+                        <argument xsi:type="string" name="model_name">default</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

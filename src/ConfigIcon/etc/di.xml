@@ -1,0 +1,135 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Define a preference for the CategoryInterface, specifying the custom Category class implementation. -->
+    <preference for="Maginium\AdminConfigIcon\Interfaces\Data\ConfigIconInterface" type="Maginium\AdminConfigIcon\Models\ConfigIcon" />
+
+    <!-- Define a type that specifies configuration for the ConfigIcon block -->
+    <type name="Maginium\AdminConfigIcon\Models\ConfigIcon">
+        <arguments>
+            <!-- Inject the configuration array for icons and navigation data -->
+            <argument xsi:type="array" name="items">
+                <!-- Navigation section for App Management -->
+                <item xsi:type="array" name="nav_app_management">
+                    <item xsi:type="string" name="id">app_management-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-mobile</item>
+                </item>
+
+                <!-- Navigation section for Catalog -->
+                <item xsi:type="array" name="nav_catalog">
+                    <item xsi:type="string" name="id">catalog-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-package-fill</item>
+                </item>
+
+                <!-- Navigation section for Design -->
+                <item xsi:type="array" name="nav_design">
+                    <item xsi:type="string" name="id">design-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-elementor</item>
+                </item>
+
+                <!-- Navigation section for Marketplace -->
+                <item xsi:type="array" name="nav_marketplace">
+                    <item xsi:type="string" name="id">marketplace-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-building-fill</item>
+                </item>
+
+                <!-- Navigation section for Utils -->
+                <item xsi:type="array" name="nav_utils">
+                    <item xsi:type="string" name="id">utils-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-menu-circled</item>
+                </item>
+
+                <!-- Navigation section for Marketing -->
+                <item xsi:type="array" name="nav_marketing">
+                    <item xsi:type="string" name="id">marketing-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-notify</item>
+                </item>
+
+                <!-- Navigation section for Development -->
+                <item xsi:type="array" name="nav_development">
+                    <item xsi:type="string" name="id">development-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-code</item>
+                </item>
+
+                <!-- Shipping Management -->
+                <item xsi:type="array" name="nav_shipping_management">
+                    <item xsi:type="string" name="id">shipping_management-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-truck</item>
+                </item>
+
+                <!-- SMS -->
+                <item xsi:type="array" name="nav_sms">
+                    <item xsi:type="string" name="id">sms-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-chat-fill</item>
+                </item>
+
+                <!-- Address -->
+                <item xsi:type="array" name="nav_address">
+                    <item xsi:type="string" name="id">address-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-map-pin-fill</item>
+                </item>
+
+                <!-- Checkout -->
+                <item xsi:type="array" name="nav_checkout">
+                    <item xsi:type="string" name="id">checkout-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-growth-fill</item>
+                </item>
+
+                <!-- Security -->
+                <item xsi:type="array" name="nav_security">
+                    <item xsi:type="string" name="id">security-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-shield-check-fill</item>
+                </item>
+
+                <!-- Services -->
+                <item xsi:type="array" name="nav_service">
+                    <item xsi:type="string" name="id">service-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-list</item>
+                </item>
+
+                <!-- Advanced -->
+                <item xsi:type="array" name="nav_advanced">
+                    <item xsi:type="string" name="id">advanced-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-code</item>
+                </item>
+
+                <!-- Customer -->
+                <item xsi:type="array" name="nav_customer">
+                    <item xsi:type="string" name="id">customer-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-account-setting-fill</item>
+                </item>
+
+                <!-- Sales -->
+                <item xsi:type="array" name="nav_sales">
+                    <item xsi:type="string" name="id">sales-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-bag-fill</item>
+                </item>
+
+                <!-- Content -->
+                <item xsi:type="array" name="nav_content">
+                    <item xsi:type="string" name="id">content-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-layout-fill</item>
+                </item>
+
+                <!-- Extensions -->
+                <item xsi:type="array" name="extensions">
+                    <item xsi:type="string" name="id">extensions-tab</item>
+                    <item xsi:type="string" name="family">Admin Icons</item>
+                    <item xsi:type="string" name="icon">e612</item>
+                    <item xsi:type="string" name="position">before</item>
+                </item>
+
+                <!-- General -->
+                <item xsi:type="array" name="general">
+                    <item xsi:type="string" name="id">general-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-info-fill</item>
+                </item>
+
+                <!-- Search -->
+                <item xsi:type="array" name="search">
+                    <item xsi:type="string" name="id">search-tab</item>
+                    <item xsi:type="string" name="icon">ni ni-search</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <!-- Define ACL resources -->
+    <acl>
+        <resources>
+            <!-- Main admin resource -->
+            <resource id="Magento_Backend::admin">
+                <!-- Resource for Extensions menu item -->
+                <resource id="Maginium_AdminCleanMenu::extensions" sortOrder="60" title="Extensions" translate="title" />
+
+                <!-- Resource for Stores section -->
+                <resource id="Magento_Backend::stores">
+                    <!-- Resource for Stores Settings section -->
+                    <resource id="Magento_Backend::stores_settings">
+                        <!-- Resource for Configuration section -->
+                        <resource id="Magento_Config::config">
+                            <!-- Resource for Clean Admin Menu Settings -->
+                            <resource id="Maginium_AdminCleanMenu::settings" sortOrder="10" title="Clean Admin Menu Settings" translate="title" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

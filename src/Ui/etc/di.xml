@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Configuration for the Design model -->
+    <type name="Magento\Theme\Model\View\Design">
+        <!-- Arguments section for the Design model -->
+        <arguments>
+            <!-- Themes array for frontend and adminhtml -->
+            <argument xsi:type="array" name="themes">
+                <!-- Frontend theme configuration -->
+                <item xsi:type="string" name="frontend">Magento/blank</item>
+                <!-- Adminhtml theme configuration -->
+                <item xsi:type="string" name="adminhtml">Magento/spectrum</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- Configuration for the Favicon model -->
+    <type name="Magento\Theme\Model\Favicon\Favicon">
+        <!-- Plugin definition for the Favicon model -->
+        <plugin name="enterprise_favicon" type="Maginium\AdminUi\Interceptors\Theme\Models\Favicon\Favicon" />
+    </type>
+
+    <!-- Configure a plugin for the Magento\Backend\Model\View\Result\Page class -->
+    <type name="Magento\Backend\Model\View\Result\Page">
+        <!-- Specify the plugin details -->
+        <plugin name="adding_admin_body_classes" sortOrder="10" type="Maginium\AdminUi\Interceptors\Backend\Models\View\Result\Page" />
+    </type>
+</config>

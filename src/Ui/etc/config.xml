@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <!-- Default configuration node for the store module -->
+    <default>
+        <!-- Design configuration section -->
+        <design>
+            <!-- Head section under design configuration -->
+            <head>
+                <!-- Default title for the store -->
+                <default_title>Magento Community Edition</default_title>
+                <!-- Default keywords for SEO -->
+                <default_keywords>Magento, Varien, E-commerce</default_keywords>
+            </head>
+        </design>
+        <!-- System configuration section -->
+        <system>
+            <!-- Admin notification configuration -->
+            <adminnotification>
+                <!-- RSS feed URL for admin notifications -->
+                <feed_url>notifications.magentocommerce.com/magento2/enterprise/notifications.rss</feed_url>
+            </adminnotification>
+        </system>
+    </default>
+</config>

@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<page
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
+    <body>
+        <!-- ReferenceContainer is a placeholder where blocks can be inserted -->
+        <referenceBlock name="before.body.end">
+            <!-- Inserting a block of class HotKeyShortcut into the reference container -->
+            <!-- The block name is 'hot_keys' and it uses the template 'hot_keys.phtml' -->
+            <block
+                class="Maginium\AdminKeyboardShortcuts\Blocks\HotKeyShortcut"
+                name="hot_keys"
+                template="Maginium_AdminKeyboardShortcuts::js.phtml"
+            />
+        </referenceBlock>
+    </body>
+</page>

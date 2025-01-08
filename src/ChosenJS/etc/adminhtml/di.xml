@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Plugin for Magento\Framework\Data\Form\Element\Select -->
+    <type name="Magento\Framework\Data\Form\Element\Select">
+        <!-- Define a plugin named "select_ui" of type Maginium\AdminChosenJS\Interceptors\Form\Element\Select -->
+        <!-- Sort order determines the order in which plugins are executed -->
+        <plugin name="select_ui" sortOrder="10" type="Maginium\AdminChosenJS\Interceptors\Form\Element\Select" />
+    </type>
+
+    <!-- Plugin for Magento\Framework\Data\Form\Element\Multiselect -->
+    <type name="Magento\Framework\Data\Form\Element\Multiselect">
+        <!-- Define a plugin named "select_ui" of type Maginium\AdminChosenJS\Interceptors\Form\Element\Multiselect -->
+        <!-- Sort order determines the order in which plugins are executed -->
+        <plugin name="select_ui" sortOrder="10" type="Maginium\AdminChosenJS\Interceptors\Form\Element\Multiselect" />
+    </type>
+
+    <!-- Plugin for Magento\Framework\Data\Form\Element\Time -->
+    <type name="Magento\Framework\Data\Form\Element\Time">
+        <!-- Define a plugin named "select_ui" of type Maginium\AdminChosenJS\Interceptors\Form\Element\Time -->
+        <!-- Sort order determines the order in which plugins are executed -->
+        <plugin name="select_ui" sortOrder="10" type="Maginium\AdminChosenJS\Interceptors\Form\Element\Time" />
+    </type>
+</config>

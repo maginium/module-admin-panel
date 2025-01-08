@@ -1,0 +1,23 @@
+<!-- Start of script - Retrieve configuration data from the block -->
+<script>
+    var iconConfig = <?= /* @noEscape */ json_encode($block->getItems()) ?>;
+</script>
+
+<!-- Start of script - Require jQuery and configIcons module, then initialize config icon functionality -->
+<script>
+    /**
+     * Require jQuery and configIcons module, then initialize config icon functionality.
+     * @param {jQuery} $ - The jQuery object.
+     * @param {ConfigIcons} ConfigIcons - The ConfigIcons class.
+     */
+    require(["jquery", "configIcons"], function($, ConfigIcons) {
+        /**
+         * Initialize config icon functionality when the document is ready.
+         */
+        $(document).ready(function() {
+            // Create an instance of ConfigIcons
+            configIcons = new ConfigIcons(iconConfig);
+        });
+    });
+</script>
+<!-- End of script -->

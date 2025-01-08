@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<page
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
+    <!-- The <head> section is used to include or modify resources like CSS and JavaScript files for the page -->
+    <head>
+        <!-- Remove the default style for the jstree (tree view) component to avoid conflicts with custom styles -->
+        <remove src="jquery/jstree/themes/default/style.css" />
+
+        <!-- Include the custom stylesheet for jstree component, replacing the default style -->
+        <css src="Maginium_AdminJsTree::lib/jstree/themes/custom/style.css" />
+    </head>
+</page>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <!-- Module configuration for Maginium_AdminUi -->
+    <module name="Maginium_AdminUi">
+        <!-- Sequence of modules that Maginium_AdminUi depends on -->
+        <sequence>
+            <!-- Magento_Cms module dependency -->
+            <module name="Magento_Cms" />
+            <!-- Magento_User module dependency -->
+            <module name="Magento_User" />
+            <!-- Magento_Widget module dependency -->
+            <module name="Magento_Widget" />
+            <!-- Magento_AdminNotification module dependency -->
+            <module name="Magento_AdminNotification" />
+        </sequence>
+    </module>
+</config>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <!-- Configuration for Clean Admin Menu settings -->
+        <clean_admin_menu>
+            <settings>
+                <!-- Set the default rule for modules to deniedByDefault -->
+                <rule_modules>deniedByDefault</rule_modules>
+
+                <!-- Define the list of allowed modules -->
+                <allowed_modules>
+                    <![CDATA[Maginium_AdminApps,Maginium_AdminFaqs,Maginium_AdminDashboard,Maginium_AdminSubscription,Maginium_SEO]]>
+                </allowed_modules>
+
+                <!-- Define the list of allowed tabs -->
+                <allowed_tabs>
+                    <![CDATA[content,shipping_management,checkout,address,marketing,sms,utils,design,app_management,marketplace,search,development,seo_management]]>
+                </allowed_tabs>
+
+                <!-- Set the default rule for tabs to deniedByDefault -->
+                <rule_tabs>deniedByDefault</rule_tabs>
+            </settings>
+        </clean_admin_menu>
+    </default>
+</config>

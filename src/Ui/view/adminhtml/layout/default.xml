@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<page
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
+    <!-- Define the contents of the <head> section of the page -->
+    <head>
+        <!-- This CSS file is for the Nioicon font -->
+        <css src="Maginium_AdminUi::fonts/nioicon/nioicon.css" />
+    </head>
+
+    <!-- Start of the body section -->
+    <body>
+        <!-- Reference the block with the name "report" -->
+        <referenceBlock name="report">
+            <!-- Start of arguments for the report block -->
+            <arguments>
+                <!-- Specify the URL for the bug report -->
+                <argument xsi:type="string" name="bugreport_url">https://support.magento.com/</argument>
+            </arguments>
+            <!-- End of the report block -->
+        </referenceBlock>
+
+        <!-- Reference the block with the name "logo" and set the template for the logo -->
+        <referenceBlock name="logo" template="Maginium_AdminUi::page/header.phtml">
+            <!-- Start of arguments for the logo block -->
+            <arguments>
+                <!-- Specify the path to the logo image -->
+                <argument xsi:type="string" name="logo_image_src">Maginium_AdminUi::images/adobe-logo.svg</argument>
+            </arguments>
+            <!-- End of the logo block -->
+        </referenceBlock>
+
+        <!-- Reference the block with the name "copyright" and set the template for the copyright section -->
+        <referenceBlock name="copyright" template="Maginium_AdminUi::page/copyright.phtml" />
+
+        <!-- Reference the block with the name "version" and set the template for the footer section -->
+        <referenceBlock name="version" template="Maginium_AdminUi::page/footer.phtml" />
+
+        <!-- Move 'notices.wrapper' to 'page.content' before all other elements -->
+        <!-- <move before="-" destination="page.content" element="notices.wrapper" /> -->
+    </body>
+</page>

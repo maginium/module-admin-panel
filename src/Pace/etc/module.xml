@@ -1,0 +1,9 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <!-- Specify the module name and its setup version -->
+    <module name="Maginium_AdminPace" setup_version="0.0.1">
+        <sequence>
+            <!-- Specify the module name and its setup version -->
+            <module name="Magento_Backend" />
+        </sequence>
+    </module>
+</config>

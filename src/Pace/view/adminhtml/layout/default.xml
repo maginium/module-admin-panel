@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<page
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
+    <!-- Define the contents of the <head> section of the page -->
+    <head>
+        <!-- This CSS file is for the Nioicon font -->
+        <css src="Maginium_AdminPace::css/black/pace-theme-minimal.css" />
+    </head>
+
+    <!-- Body element of the page -->
+    <body>
+        <!-- Reference to a container where the block will be inserted -->
+        <referenceContainer name="before.body.end">
+            <!-- Definition of a block element -->
+            <block class="Magento\Framework\View\Element\Template" name="pace-js" template="Maginium_AdminPace::init.phtml" />
+        </referenceContainer>
+    </body>
+</page>

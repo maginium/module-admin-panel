@@ -1,0 +1,21 @@
+<?php
+
+// Determine if the edition attribute should be included, escaping the edition value if present
+$edition = $block->hasEdition() ? 'data-edition="' . $block->escapeHtml($block->getEdition()) . '"' : '';
+
+// Check if the logo image source is available; if not, fallback to a default logo
+$logoSrc = ($block->hasLogoImageSrc()) ? $block->escapeHtml($block->getLogoImageSrc()) : 'images/adobe-logo.svg';
+
+?>
+
+<!-- Render the logo link with the home link URL -->
+<a
+    href="<?= $block->escapeUrl($block->getHomeLink()) ?>"
+    <?= /* @noEscape */ $edition ?>
+    class="logo">
+
+    <!-- Render the logo image with the proper source and alt/title text -->
+    <img class="logo-img" src="<?= /* @noEscape */ $block->getViewFileUrl($logoSrc) ?>"
+        alt="<?= $block->escapeHtml(__('Adobe Commerce Admin Panel')) ?>"
+        title="<?= $block->escapeHtml(__('Adobe Commerce Admin Panel')) ?>" />
+</a>

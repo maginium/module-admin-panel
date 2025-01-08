@@ -1,0 +1,41 @@
+<?php
+
+use Maginium\Framework\Support\Facades\Json;
+use Maginium\AdminKeyboardShortcuts\Blocks\HotKeyShortcut;
+
+// Get the keyboardShortcuts data from the block and encode it as JSON
+/** @var HotKeyShortcut $block */
+$keyboardShortcutsJson = Json::encode($block->getItems());
+
+// Get the translated message for 'Target URL is the same as the current URL'
+$sameUrlMessage = __("Target URL is the same as the current URL");
+
+?>
+
+<!-- Start of script - Initialize keyboard shortcuts -->
+<script>
+    /**
+     * Require jQuery and KeyboardShortcuts module, then initialize keyboard shortcuts functionality.
+     * @param {jQuery} $ - The jQuery object.
+     * @param {KeyboardShortcuts} KeyboardShortcuts - The KeyboardShortcuts class.
+     */
+    require(["jquery", "keyboardShortcuts"], function($, keyboardShortcuts) {
+        /**
+         * Initialize keyboard shortcuts functionality when the document is ready.
+         */
+        $(document).ready(function() {
+            // Parse the PHP encoded JSON data
+            const shortcuts = <?php echo $keyboardShortcutsJson; ?>;
+
+            // Get the backend URL
+            const backendUrl = "<?php echo $block->getBackendUrl(); ?>";
+
+            // Get the translated message for same URL scenario
+            const sameUrlMessage = "<?php echo $sameUrlMessage; ?>";
+
+            // Create an instance of KeyboardShortcuts
+            new keyboardShortcuts(shortcuts, backendUrl, sameUrlMessage);
+        });
+    });
+</script>
+<!-- End of script -->

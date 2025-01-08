@@ -1,0 +1,66 @@
+/*
+ * Styling for a panel containing additional information in a form.
+ * This panel is intended to be used inside a React component, with specific styling for spacing, colors, and interactive elements.
+ */
+.react-panel {
+  /*
+     * Styling for the 'form-more-info' class, used for the specific container inside the panel.
+     * These styles ensure the panel is styled and positioned correctly within its parent container.
+     */
+  .form-more-info {
+    /* Center the panel horizontally within its container */
+    margin: 0 auto;
+
+    /* Set the text color to a dark gray to represent information */
+    color: @color-gray56;
+
+    /* Set the width to fit its content, allowing it to shrink or expand based on content */
+    width: fit-content;
+
+    /* Position the panel relative to its normal position for potential absolute child elements */
+    position: relative;
+
+    /* Add a border radius to soften the corners of the panel */
+    border-radius: 4px;
+
+    /* Add a bottom margin to create space between this panel and other elements below */
+    margin-bottom: 2rem;
+
+    /* Add a top margin to provide spacing between this panel and elements above */
+    margin-top: 2rem;
+
+    /* Padding inside the panel for better spacing between content and borders */
+    padding: 1rem 1.25rem;
+
+    /* Set a light background color to make the panel visually distinct */
+    background-color: #fcfcfd;
+
+    /* Add a light border around the panel to separate it from the background */
+    border: 1px solid #e5e9f2;
+
+    /*
+         * Styling for links inside the panel, specifically those with the 'more-info-link' class.
+         * These links should be visually distinct and have an interactive hover effect.
+         */
+    .more-info-link {
+      /* Set the link color to the primary color for emphasis */
+      color: @primary__color;
+
+      /* Add a subtle box shadow to the link for a visual highlight on hover */
+      box-shadow: 0 1px 0 @primary__color;
+
+      /* Add smooth transitions for various hover effects like color and shadow */
+      transition:
+        color 0.4s,
+        background-color 0.4s,
+        border 0.4s,
+        box-shadow 0.4s;
+
+      /* Styling when the link is hovered: remove the shadow and underline */
+      &:hover {
+        box-shadow: none;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,306 @@
+/**
+ * Styles for customizing the appearance of Chosen.js dropdowns.
+ * @class
+ */
+.react-panel {
+  /** Styles for the Chosen.js dropdown container */
+  .chosen-container {
+    /** Styles for the Chosen.js dropdown */
+    .chosen-drop {
+      /** Border color */
+      border-color: @color-gray68 !important;
+      /** Top margin */
+      margin-top: 10px;
+    }
+  }
+
+  /** Styles for the single selection Chosen.js container */
+  .chosen-container-single {
+    /** Styles for the single selection Chosen.js dropdown */
+    .chosen-single {
+      /** Styles for the selected item text */
+      span {
+        /** Text color */
+        // color: @color-gray-light2 !important;
+      }
+
+      /** Styles for the dropdown toggle arrow */
+      div {
+        b {
+          &:after {
+            /** Arrow color */
+            color: @color-gray-light2 !important;
+          }
+        }
+      }
+
+      /** Border color for the selected item */
+      border-color: @color-gray68 !important;
+    }
+
+    /** Styles for the search input in single selection mode */
+    .chosen-search {
+      input[type="text"] {
+        /** Border color */
+        border-color: @color-gray68 !important;
+      }
+    }
+  }
+
+  /** Styles for the multi selection Chosen.js container */
+  .chosen-container-multi {
+    /** Styles for the multi selection choices */
+    .chosen-choices {
+      /** Styles for each selected choice */
+      .search-choice {
+        /** Text color of the selected choice */
+        // color: @color-gray-light2;
+
+        /** Styles for the close button of the selected choice */
+        .search-choice-close {
+          &:after {
+            /** Close button color */
+            color: @color-gray-light2;
+          }
+        }
+      }
+
+      /** Border color for the multi selection container */
+      border-color: @color-gray68 !important;
+    }
+  }
+
+  /** Additional styles for multi selection choices */
+  .chosen-container-multi {
+    .chosen-choices {
+      .search-choice {
+        /** Background color for selected choices */
+        // background-color: @color-lighter-grayish !important;
+      }
+    }
+  }
+
+  /** Styles for dropdown results */
+  .chosen-container {
+    .chosen-drop {
+      .chosen-results {
+        /** Styles for selected results */
+        li.result-selected {
+          background-color: @color-lighter-grayish !important;
+        }
+
+        /** Styles for highlighted results */
+        li.highlighted {
+          background-color: @color-lighter-grayish !important;
+        }
+      }
+    }
+  }
+
+  /** Styles for single selection dropdown */
+  .chosen-container-single {
+    .chosen-single {
+      /** Border and padding styles */
+      border: 1px solid;
+      padding-left: 16px;
+      padding-right: 36px;
+      box-shadow: unset;
+      box-sizing: border-box;
+      cursor: pointer;
+      height: 3.6rem;
+      text-align: left;
+
+      /** Styles for the selected item text */
+      span {
+        font-size: 13px;
+        font-weight: 400;
+        margin-right: 0;
+      }
+
+      /** Styles for the dropdown toggle arrow */
+      div {
+        width: 36px;
+
+        b {
+          background-image: unset;
+          position: relative;
+
+          &:after {
+            font-size: 13px;
+            font-weight: 400;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+
+    /** Styles for the search input in single selection mode */
+    .chosen-search {
+      padding: 0;
+      margin-bottom: 0.6rem;
+
+      input[type="text"] {
+        background-image: unset;
+        border: 1px solid;
+        font-size: 13px;
+        font-weight: 400;
+        padding: 0.6rem 1.2rem;
+        margin: 0;
+        line-height: 20px;
+        box-shadow: unset;
+      }
+    }
+  }
+
+  /** Styles for multi selection container */
+  .chosen-container-multi {
+    min-width: 15rem;
+
+    /** Styles for the choices container */
+    .chosen-choices {
+      border: 1px solid;
+      box-shadow: unset;
+      padding: 0.2rem 0.3rem;
+
+      /** Styles for the search field */
+      .search-field input[type="text"] {
+        font-size: 13px;
+        font-weight: 400;
+        height: 30px;
+        line-height: 24px;
+        box-shadow: unset;
+      }
+
+      /** Styles for each selected choice */
+      .search-choice {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 24px;
+        padding: 0 0.8rem 0 2rem;
+        margin: 0.3rem;
+        border: 0;
+        background-image: unset;
+        border-radius: 3px;
+        box-shadow: unset;
+
+        /** Styles for the close button of each selected choice */
+        .search-choice-close {
+          background-image: unset;
+          left: 4px;
+          top: 0;
+          height: 24px;
+
+          &:after {
+            font-size: 13px;
+            font-weight: 700;
+            content: "×";
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+
+  /** Styles for dropdown results */
+  .chosen-container {
+    .chosen-drop {
+      box-shadow: unset;
+      border: 1px solid;
+      padding: 0.6rem;
+
+      .chosen-results {
+        margin: 0;
+        padding: 0;
+
+        /** Styles for each result item */
+        li {
+          font-size: 13px;
+          font-weight: 400;
+          line-height: 20px;
+          padding: 0.6rem 1.2rem;
+          text-align: left;
+
+          /** Styles for grouped option labels */
+          &.chosen_optgroup_label {
+            text-transform: uppercase;
+            font-weight: 700;
+          }
+
+          /** Styles for result items with offset */
+          &.chosen_option_offset_1 {
+            padding-left: 24px;
+          }
+
+          &.chosen_option_offset_2 {
+            padding-left: 36px;
+          }
+
+          &.chosen_option_offset_3 {
+            padding-left: 48px;
+          }
+
+          &.chosen_option_offset_4 {
+            padding-left: 60px;
+          }
+
+          &.chosen_option_offset_5 {
+            padding-left: 72px;
+          }
+
+          /** Styles for 'No results' message */
+          &.no-results {
+            background-color: unset;
+          }
+
+          /** Margin bottom for result items */
+          &:not(:last-child) {
+            margin-bottom: 0.2rem;
+          }
+
+          /** Styles for selected and highlighted results */
+          &.result-selected,
+          &.highlighted {
+            color: inherit;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  /** Active styles for the dropdown container and choices */
+  .chosen-container-active .chosen-single,
+  .chosen-container-active .chosen-choices {
+    box-shadow: 0 0 0 3px fade(@primary__color, 15%);
+  }
+
+  /** Styles for a specific element within #shipment_tracking_info */
+  #shipment_tracking_info .col-carrier {
+    min-width: 196px;
+
+    /** Styles for the Chosen.js dropdown when active */
+    .chosen-with-drop.chosen-container-active {
+      position: absolute;
+    }
+  }
+
+  /** Styles for a specific element with ID tax_rate_grid_filter_tax_country_id */
+  div#tax_rate_grid_filter_tax_country_id_chosen {
+    /** Set width to 100% */
+    width: 100% !important;
+    /** Set minimum width to 30rem */
+    min-width: 30rem;
+  }
+
+  /** Additional active styles for the dropdown container and choices */
+  .chosen-container-active .chosen-single,
+  .chosen-container-active .chosen-choices {
+    border-color: @primary__color;
+  }
+}

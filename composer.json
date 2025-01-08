@@ -1,0 +1,113 @@
+{
+  "name": "maginium/module-admin-panel",
+  "description": "Maginium AdminPanel module for Magento 2. A foundational utility package that provides advanced admin-panel tools, UI enhancements, and integration features to streamline e-commerce management.",
+  "type": "magento2-module",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Maginium",
+      "role": "Technical Support",
+      "email": "support@maginium.com",
+      "homepage": "https://www.maginium.com"
+    }
+  ],
+  "homepage": "https://www.maginium.com",
+  "support": {
+    "issues": "https://www.maginium.com/issues",
+    "source": "https://github.com/maginium/module-admin-panel",
+    "email": "support@maginium.com",
+    "docs": "https://docs.maginium.com/admin-panel"
+  },
+  "keywords": [
+    "admin-panel utilities",
+    "admin panel enhancements",
+    "magento 2 admin-panel",
+    "maginium extensions",
+    "ecommerce tools",
+    "magento admin",
+    "ui management",
+    "advanced configurations",
+    "admin dashboard",
+    "admin-panel modules"
+  ],
+  "prefer-stable": true,
+  "minimum-stability": "stable",
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "require": {
+    "php": ">=8.2",
+    "magento/module-ui": "*",
+    "magento/theme-adminhtml-spectrum": "^100.4"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.13",
+    "mockery/mockery": "^1.5",
+    "phpunit/phpunit": "^10.3",
+    "phpstan/phpstan": "^1.10",
+    "friendsofphp/php-cs-fixer": "^3.19"
+  },
+  "autoload": {
+    "files": [
+      "src/Ui/registration.php",
+      "src/Pace/registration.php",
+      "src/JsTree/registration.php",
+      "src/InfoBox/registration.php",
+      "src/ChosenJS/registration.php",
+      "src/Password/registration.php",
+      "src/CleanMenu/registration.php",
+      "src/ConfigIcon/registration.php",
+      "src/EmptyStates/registration.php",
+      "src/KeyboardShortcuts/registration.php"
+    ],
+    "psr-4": {
+      "Maginium\\AdminUi\\": "src/Ui/",
+      "Maginium\\AdminPace\\": "src/Pace/",
+      "Maginium\\AdminJsTree\\": "src/JsTree/",
+      "Maginium\\AdminInfoBox\\": "src/InfoBox/",
+      "Maginium\\AdminChosenJS\\": "src/ChosenJS/",
+      "Maginium\\AdminPassword\\": "src/Password/",
+      "Maginium\\AdminCleanMenu\\": "src/CleanMenu/",
+      "Maginium\\AdminConfigIcon\\": "src/ConfigIcon/",
+      "Maginium\\AdminEmptyStates\\": "src/EmptyStates/",
+      "Maginium\\AdminKeyboardShortcuts\\": "src/KeyboardShortcuts/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Maginium\\AdminPanel\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [],
+    "post-update-cmd": [],
+    "lint": [
+      "php-cs-fixer fix --dry-run",
+      "phpstan analyse"
+    ],
+    "fix": [
+      "php-cs-fixer fix"
+    ],
+    "test": [
+      "phpunit --stop-on-failure"
+    ]
+  },
+  "extra": {
+    "magento-version": ">=2.4",
+    "classmap-authoritative": true,
+    "patches": {
+      "magento/framework": {}
+    }
+  },
+  "archive": {
+    "exclude": [
+      "/tests",
+      "/.github",
+      "/.gitignore",
+      "/composer.lock",
+      "/phpunit.xml"
+    ]
+  }
+}
