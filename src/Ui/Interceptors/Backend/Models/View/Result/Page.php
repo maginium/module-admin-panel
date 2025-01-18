@@ -22,7 +22,7 @@ class Page
      * This class is added to the page's `<body>` element to enable React-based
      * components or custom styling for React panels.
      */
-    public const BODY_CLASS_REACT_PANEL = 'react-panel';
+    public const REACT_PANEL_BODY_CLASS = 'react-panel';
 
     /**
      * CSS class for identifying Maginium-specific pages or functionalities.
@@ -30,7 +30,7 @@ class Page
      * This class is added to the page's `<body>` element to customize styles
      * and behavior for Maginium-related modules.
      */
-    public const BODY_CLASS_PIXICOMMERCE = '__maginium';
+    public const MAIN_BODY_CLASS = '__maginium';
 
     /**
      * Before Render Result.
@@ -75,10 +75,10 @@ class Page
         // Check if the 'addBodyClass' method exists to prevent errors in case of API changes
         if (method_exists($config, 'addBodyClass')) {
             // Add the React panel body class to enable React-specific styling
-            $config->addBodyClass(self::BODY_CLASS_REACT_PANEL);
+            $config->addBodyClass(self::REACT_PANEL_BODY_CLASS);
 
             // Add the Maginium body class for Maginium-specific styling
-            $config->addBodyClass(self::BODY_CLASS_PIXICOMMERCE);
+            $config->addBodyClass(self::MAIN_BODY_CLASS);
         }
     }
 }

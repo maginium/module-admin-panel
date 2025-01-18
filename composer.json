@@ -16,7 +16,7 @@
     "issues": "https://www.maginium.com/issues",
     "source": "https://github.com/maginium/module-admin-panel",
     "email": "support@maginium.com",
-    "docs": "https://docs.maginium.com/admin-panel"
+    "docs": "https://docs.maginium.com"
   },
   "keywords": [
     "admin-panel utilities",
@@ -53,11 +53,8 @@
     "files": [
       "src/Ui/registration.php",
       "src/Pace/registration.php",
-      "src/JsTree/registration.php",
       "src/InfoBox/registration.php",
       "src/ChosenJS/registration.php",
-      "src/Password/registration.php",
-      "src/CleanMenu/registration.php",
       "src/ConfigIcon/registration.php",
       "src/EmptyStates/registration.php",
       "src/KeyboardShortcuts/registration.php"
@@ -65,11 +62,8 @@
     "psr-4": {
       "Maginium\\AdminUi\\": "src/Ui/",
       "Maginium\\AdminPace\\": "src/Pace/",
-      "Maginium\\AdminJsTree\\": "src/JsTree/",
       "Maginium\\AdminInfoBox\\": "src/InfoBox/",
       "Maginium\\AdminChosenJS\\": "src/ChosenJS/",
-      "Maginium\\AdminPassword\\": "src/Password/",
-      "Maginium\\AdminCleanMenu\\": "src/CleanMenu/",
       "Maginium\\AdminConfigIcon\\": "src/ConfigIcon/",
       "Maginium\\AdminEmptyStates\\": "src/EmptyStates/",
       "Maginium\\AdminKeyboardShortcuts\\": "src/KeyboardShortcuts/"

@@ -18,10 +18,10 @@ use Maginium\Framework\Component\Module;
 $extensions = [
     'Maginium_AdminUi' => __DIR__ . '/Ui',
     'Maginium_AdminPace' => __DIR__ . '/Pace',
-    'Maginium_AdminJsTree' => __DIR__ . '/JsTree',
+    // 'Maginium_AdminJsTree' => __DIR__ . '/JsTree',
     'Maginium_AdminInfoBox' => __DIR__ . '/InfoBox',
     'Maginium_AdminChosenJS' => __DIR__ . '/ChosenJS',
-    'Maginium_AdminPassword' => __DIR__ . '/Password',
+    // 'Maginium_AdminPassword' => __DIR__ . '/Password',
     'Maginium_AdminConfigIcon' => __DIR__ . '/ConfigIcon',
     'Maginium_AdminEmptyStates' => __DIR__ . '/EmptyStates',
     'Maginium_AdminKeyboardShortcuts' => __DIR__ . '/KeyboardShortcuts',
